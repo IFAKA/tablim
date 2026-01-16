@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Icons</title>
+</head>
+<body>
+  <h1>Right-click each and save as PNG</h1>
+  <div>
+    <h3>icon16.png</h3>
+    <canvas id="c16" width="16" height="16"></canvas>
+  </div>
+  <div>
+    <h3>icon48.png</h3>
+    <canvas id="c48" width="48" height="48"></canvas>
+  </div>
+  <div>
+    <h3>icon128.png</h3>
+    <canvas id="c128" width="128" height="128"></canvas>
+  </div>
+  <script>
+    function draw(canvas, size) {
+      const ctx = canvas.getContext('2d');
+      const r = size * 0.125;
+
+      ctx.fillStyle = '#4285f4';
+      ctx.beginPath();
+      ctx.roundRect(0, 0, size, size, r);
+      ctx.fill();
+
+      ctx.fillStyle = 'white';
+      ctx.font = `bold ${size * 0.5}px system-ui, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('T', size/2, size/2 + size*0.05);
+    }
+
+    draw(document.getElementById('c16'), 16);
+    draw(document.getElementById('c48'), 48);
+    draw(document.getElementById('c128'), 128);
+  </script>
+</body>
+</html>

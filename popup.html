@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Tab Limiter</h1>
+    <div class="setting">
+      <label for="maxTabs">Max tabs (non-grouped):</label>
+      <input type="number" id="maxTabs" min="1" max="100" value="10">
+    </div>
+    <button id="save">Save</button>
+    <div id="status"></div>
+    <div class="info">
+      <span id="currentCount">0</span> / <span id="maxDisplay">10</span> tabs
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
